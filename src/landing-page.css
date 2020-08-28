@@ -1,0 +1,57 @@
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #cae2ea;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.intro {
+  height: 100%;
+  width: 45%;
+  background-color: #07b4ee;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-position: bottom;
+  background-size: 55%;
+  background-repeat: no-repeat;
+}
+
+.title1 {
+  color: white;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.75rem;
+}
+
+.inputBox {
+  padding-left: 0.75rem;
+  margin: 0.75rem 0;
+  height: 1.5rem;
+  width: 90%;
+  background-color: #cae2ea;
+  border-style: none;
+  border-radius: 0.2rem;
+  outline: none;
+}
+
+.button {
+  cursor: pointer;
+  margin: 0.75rem 0;
+  width: 30%;
+  height: 1.5rem;
+  background-color: #cae2ea;
+  border-style: none;
+  border-radius: 0.2rem;
+  transition: 0.25s;
+  font-size: 0.9rem;
+  color: #123753;
+}
+
+.button:hover {
+  background-color: rgb(230, 230, 230);
+}
