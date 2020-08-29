@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import TopBar from "./TopBar";
 import SideMenu from "./SideMenu";
+import DragPhoto from "../components/CardActions/DragPhoto";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -157,6 +158,7 @@ export default function App() {
             )}
           </Droppable>
         </DragDropContext>
+
         <SideMenu
           setBackgroundUrl={setBackgroundUrl}
           open={open}
