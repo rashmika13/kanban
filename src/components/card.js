@@ -2,6 +2,7 @@ import React from "react";
 import { Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Draggable } from "react-beautiful-dnd";
+import DragPhoto from "./CardActions/DragPhoto";
 
 const useStyle = makeStyles((theme) => ({
   card: {
@@ -9,20 +10,59 @@ const useStyle = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
 }));
+
 export default function Card({ card, index }) {
   const classes = useStyle();
 
+  //   const bannerImage = document.getElementById("uploadBannerImage");
+  //   var imgData = getBase64Image(bannerImage);
+  //   localStorage.setItem("imgData", imgData);
+
+  //   var dataImage = localStorage.getItem("imgData");
+  //   const bannerImg = document.getElementById("tableBanner");
+  //   bannerImg.src = "data:image/png;base64," + dataImage;
+
+  //   function readURL(input) {
+  //     document.getElementById("bannerImg").style.display = "block";
+
+  //     if (input.files && input.files[0]) {
+  //       var reader = new FileReader();
+
+  //       reader.onload = function (e) {
+  //         document.getElementById("bannerImg").src = e.target.result;
+  //       };
+
+  //       reader.readAsDataURL(input.files[0]);
+  //     }
+  //   }
+
+  //   function getBase64Image(img) {
+  //     var canvas = document.createElement("canvas");
+  //     canvas.width = img.width;
+  //     canvas.height = img.height;
+
+  //     var ctx = canvas.getContext("2d");
+  //     ctx.drawImage(img, 0, 0);
+
+  //     var dataURL = canvas.toDataURL("image/png");
+
+  //     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+  //   }
+
   return (
-    <Draggable draggableId={card.id} index={index}>
-      {(provided) => (
-        <div
-          ref={provided.innerRef}
-          {...provided.dragHandleProps}
-          {...provided.draggableProps}
-        >
-          <Paper className={classes.card}>{card.title}</Paper>
-        </div>
-      )}
-    </Draggable>
+    <div>
+      <Draggable draggableId={card.id} index={index}>
+        {(provided) => (
+          <div
+            ref={provided.innerRef}
+            {...provided.dragHandleProps}
+            {...provided.draggableProps}
+          >
+            <Paper className={classes.card}>{card.title}</Paper>
+          </div>
+        )}
+      </Draggable>
+      <DragPhoto />
+    </div>
   );
 }
