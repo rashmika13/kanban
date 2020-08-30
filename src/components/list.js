@@ -16,7 +16,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   },
 }));
-export default function List({ list, index }) {
+export default function List({ list, index, deleteCard }) {
   const classes = useStyle();
   return (
     <Draggable draggableId={list.id} index={index}>
@@ -33,7 +33,7 @@ export default function List({ list, index }) {
                   className={classes.cardContainer}
                 >
                   {list.cards.map((card, index) => (
-                    <Card key={card.id} card={card} index={index} />
+                    <Card key={card.id} card={card} index={index} deleteCard = {deleteCard} listId = {list.id} />
                   ))}
                   {provided.placeholder}
                 </div>

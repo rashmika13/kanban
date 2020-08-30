@@ -28,6 +28,7 @@ export default function InputCard({ setOpen, listId, type }) {
   const classes = useStyle();
   const { addMoreCard, addMoreList } = useContext(storeApi);
   const [title, setTitle] = useState("");
+  
 
   const handleOnChange = (e) => {
     setTitle(e.target.value);
@@ -43,6 +44,17 @@ export default function InputCard({ setOpen, listId, type }) {
       setOpen(false);
     }
   };
+
+  // const handleOnChange = (e) => {
+  //   setNewContent(e.target.value);
+  // };
+
+  // const handleEdit = () => {
+  //   updateCardTitle(title, listId);
+  //   setOpen(false);
+  // };
+
+  
 
   return (
     <div>
@@ -66,9 +78,10 @@ export default function InputCard({ setOpen, listId, type }) {
         </Paper>
       </div>
       <div className={classes.confirm}>
-        <Button className={classes.btnConfirm} onClick={handleBtnConfirm}>
+        <Button className={classes.btnConfirm} onClick={handleBtnConfirm} >
           {type === "card" ? "Add Card" : "Add List"}
         </Button>
+    
         <IconButton onClick={() => setOpen(false)}>
           <ClearIcon />
         </IconButton>

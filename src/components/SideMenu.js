@@ -84,9 +84,10 @@ export default function SideMenu({ setBackgroundUrl, setOpen, open }) {
         </div>
       </div>
       <div className={classes.menuContainer}>
-        {photos.map((photo) => (
+        {photos.map((photo,idx) => (
           <div
             className={classes.menu}
+            key = {idx}
             style={{
               backgroundImage: `url(${photo.thumb})`,
               backgroundSize: "cover",

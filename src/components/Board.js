@@ -50,6 +50,12 @@ export default function App() {
     setData(newState);
   };
 
+  const deleteCard = (event,idx,card,listId) => {
+    const newData = {...data}
+    newData.lists[listId].cards.splice(idx,1)
+    setData(newData)
+   }
+
   const addMoreList = (title) => {
     const newListId = uuid();
     const newList = {
@@ -150,7 +156,7 @@ export default function App() {
               >
                 {data.listIds.map((listId, index) => {
                   const list = data.lists[listId];
-                  return <List list={list} key={listId} index={index} />;
+                  return <List list={list} key={listId} index={index} deleteCard = {deleteCard} />;
                 })}
                 <InputContainer type="list" />
                 {provided.placeholder}
