@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Draggable } from "react-beautiful-dnd";
 import DragPhoto from "./CardActions/DragPhoto";
-
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
+import AttachmentIcon from "@material-ui/icons/Attachment";
 
 const useStyle = makeStyles((theme) => ({
   card: {
@@ -12,7 +14,7 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-export default function Card({ card, index, deleteCard, listId }) {
+export default function Card({ card, index, deleteCard, editCard, listId }) {
   const classes = useStyle();
 
   //   const bannerImage = document.getElementById("uploadBannerImage");
@@ -49,14 +51,14 @@ export default function Card({ card, index, deleteCard, listId }) {
 
   //     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   //   }
-  const [showButton,setShowButton] = useState(false)
-  const showEdit= (show) => {
-    if(show){
-      setShowButton(true)
+  const [showButton, setShowButton] = useState(false);
+  const showEdit = (show) => {
+    if (show) {
+      setShowButton(true);
     } else {
-      setShowButton(false)
+      setShowButton(false);
     }
-  }
+  };
 
   // const deleteCard = (event) => {
   //  const cardsList = card
@@ -65,42 +67,58 @@ export default function Card({ card, index, deleteCard, listId }) {
 
   return (
     <div>
-      {
-        showButton ? (
-          <div>
-        <Draggable draggableId={card.id} index={index}>
-        {(provided) => (
-          <div
-            ref={provided.innerRef}
-            {...provided.dragHandleProps}
-            {...provided.draggableProps}
-          >
-            <Paper  onMouseEnter={() => showEdit(true)}
-                     onMouseLeave={() => showEdit(false)}
-          className={classes.card}>{card.title}
-          <button>Edit</button>
-          <button onClick={(event,idx) => deleteCard(event,index,card,listId)}>Delete</button></Paper>
-          </div>
-        )}
-      </Draggable>
-      <DragPhoto />
-      </div>)
-      :(
+      {showButton ? (
         <div>
-       <Draggable draggableId={card.id} index={index}>
-      {(provided) => (
-        <div
-          ref={provided.innerRef}
-          {...provided.dragHandleProps}
-          {...provided.draggableProps}
-        >
-          <Paper  onMouseEnter={() => showEdit(true)}
-                   onMouseLeave={() => showEdit(false)}
-        className={classes.card}>{card.title}</Paper>
+          <Draggable draggableId={card.id} index={index}>
+            {(provided) => (
+              <div
+                ref={provided.innerRef}
+                {...provided.dragHandleProps}
+                {...provided.draggableProps}
+              >
+                <Paper
+                  onMouseEnter={() => showEdit(true)}
+                  onMouseLeave={() => showEdit(false)}
+                  className={classes.card}
+                >
+                  {card.title}
+
+                  <EditIcon>Edit</EditIcon>
+
+                  <DeleteIcon
+                    onClick={(event, idx) =>
+                      deleteCard(event, index, card, listId)
+                    }
+                  >
+                    Delete
+                  </DeleteIcon>
+                  <DragPhoto />
+                </Paper>
+              </div>
+            )}
+          </Draggable>
+        </div>
+      ) : (
+        <div>
+          <Draggable draggableId={card.id} index={index}>
+            {(provided) => (
+              <div
+                ref={provided.innerRef}
+                {...provided.dragHandleProps}
+                {...provided.draggableProps}
+              >
+                <Paper
+                  onMouseEnter={() => showEdit(true)}
+                  onMouseLeave={() => showEdit(false)}
+                  className={classes.card}
+                >
+                  {card.title}
+                </Paper>
+              </div>
+            )}
+          </Draggable>
         </div>
       )}
-    </Draggable>
-      </div>)}
     </div>
   );
 }

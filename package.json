@@ -25,6 +25,7 @@
     "react-browser-router": "^2.1.2",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.0.3",
+    "react-gif-player": "^0.4.2",
     "react-global-configuration": "^1.4.0",
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",

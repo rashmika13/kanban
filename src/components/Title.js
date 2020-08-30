@@ -3,7 +3,7 @@ import { Typography, InputBase } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import storeApi from "../utils/storeApi";
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const useStyle = makeStyles((theme) => ({
   editableTitleContainer: {
@@ -55,17 +55,22 @@ export default function Title({ title, listId, handleColumnDelete }) {
           />
         </div>
       ) : (
-          <div className={classes.editableTitleContainer}>
-            <Typography
-              onClick={() => setOpen(!open)}
-              className={classes.editableTitle}
-            >
-              {title}
-            </Typography>
-            <button name={title} value={listId} onClick={handleColumnDelete}>Delete</button>
-            <MoreHorizIcon />
-          </div>
-        )}
+        <div className={classes.editableTitleContainer}>
+          <Typography
+            onClick={() => setOpen(!open)}
+            className={classes.editableTitle}
+          >
+            {title}
+          </Typography>
+          <DeleteIcon
+            name={title}
+            value={listId}
+            onClick={handleColumnDelete}
+          />
+          Delete
+          <MoreHorizIcon />
+        </div>
+      )}
     </div>
   );
 }
