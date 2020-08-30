@@ -55,19 +55,11 @@ export default function App() {
     newData.lists[listId].cards.splice(idx, 1)
     setData(newData)
   }
-  const handleColumnDelete = (e, idx) => {
-    console.log(e.target)
-    console.log(e.target.value)
-
+  const handleColumnDelete = (e) => {
     const newData = { ...data }
+    let idx = newData.listIds.indexOf(e.target.value)
     newData.listIds.splice(idx, 1)
     setData(newData)
-
-    // if (list.id === e.target.value) {
-    //   //delete e.target.value
-    //   //delete list
-    //   data.listIds.splice(list.id, 1)
-    // }
   }
 
   const addMoreList = (title) => {
