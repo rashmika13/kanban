@@ -3,6 +3,7 @@ import { Typography, InputBase } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import storeApi from "../utils/storeApi";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyle = makeStyles((theme) => ({
   editableTitleContainer: {
@@ -23,11 +24,12 @@ const useStyle = makeStyles((theme) => ({
     },
   },
 }));
-export default function Title({ title, listId }) {
+export default function Title({ title, listId, handleColumnDelete }) {
   const [open, setOpen] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
   const { updateListTitle } = useContext(storeApi);
   const classes = useStyle();
+
   const handleOnChange = (e) => {
     setNewTitle(e.target.value);
   };
@@ -36,6 +38,7 @@ export default function Title({ title, listId }) {
     updateListTitle(newTitle, listId);
     setOpen(false);
   };
+
   return (
     <div>
       {open ? (
@@ -52,16 +55,17 @@ export default function Title({ title, listId }) {
           />
         </div>
       ) : (
-        <div className={classes.editableTitleContainer}>
-          <Typography
-            onClick={() => setOpen(!open)}
-            className={classes.editableTitle}
-          >
-            {title}
-          </Typography>
-          <MoreHorizIcon />
-        </div>
-      )}
+          <div className={classes.editableTitleContainer}>
+            <Typography
+              onClick={() => setOpen(!open)}
+              className={classes.editableTitle}
+            >
+              {title}
+            </Typography>
+            <button name={title} value={listId} onClick={handleColumnDelete}>Delete</button>
+            <MoreHorizIcon />
+          </div>
+        )}
     </div>
   );
 }
