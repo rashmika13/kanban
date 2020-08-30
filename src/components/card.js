@@ -100,7 +100,6 @@ export default function Card({ card, index, deleteCard, listId }) {
         </div>
       )}
     </Draggable>
-    <DragPhoto />}
       </div>)}
     </div>
   );
