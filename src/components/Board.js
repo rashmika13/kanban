@@ -50,11 +50,25 @@ export default function App() {
     setData(newState);
   };
 
-  const deleteCard = (event,idx,card,listId) => {
-    const newData = {...data}
-    newData.lists[listId].cards.splice(idx,1)
+  const deleteCard = (event, idx, card, listId) => {
+    const newData = { ...data }
+    newData.lists[listId].cards.splice(idx, 1)
     setData(newData)
-   }
+  }
+  const handleColumnDelete = (e, idx) => {
+    console.log(e.target)
+    console.log(e.target.value)
+
+    const newData = { ...data }
+    newData.listIds.splice(idx, 1)
+    setData(newData)
+
+    // if (list.id === e.target.value) {
+    //   //delete e.target.value
+    //   //delete list
+    //   data.listIds.splice(list.id, 1)
+    // }
+  }
 
   const addMoreList = (title) => {
     const newListId = uuid();
@@ -156,7 +170,7 @@ export default function App() {
               >
                 {data.listIds.map((listId, index) => {
                   const list = data.lists[listId];
-                  return <List list={list} key={listId} index={index} deleteCard = {deleteCard} />;
+                  return <List list={list} key={listId} index={index} deleteCard={deleteCard} handleColumnDelete={handleColumnDelete} />;
                 })}
                 <InputContainer type="list" />
                 {provided.placeholder}

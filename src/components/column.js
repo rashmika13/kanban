@@ -21,6 +21,7 @@ const useStyle = makeStyles((theme) => ({
 export default function InputContainer({ listId, type }) {
   const classes = useStyle();
   const [open, setOpen] = useState(false);
+
   return (
     <div className={classes.root}>
       <Collapse in={open}>
