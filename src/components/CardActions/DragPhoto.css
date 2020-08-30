@@ -1,4 +1,19 @@
-.file-input {
+.form-control {
+  padding: .375rem 0;
+  border: none;
+}
+
+.preview img {
+  max-width: 100px;
+}
+
+.multi-preview img {
+  max-width: 100px;
+  padding: 5px;
+}
+
+
+/* .file-input {
   display: none;
 }
 
@@ -75,7 +90,7 @@
 
 .file-display-container {
   position: fixed;
-  width: 1000px;
+  width: 800px;
 }
 
 .file-status-bar {
@@ -195,16 +210,16 @@
 
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 5px;
+  right: 15px;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .upload-modal {
-  z-index: 999;
+  z-index: 555;
   display: none;
   overflow: hidden;
 }
@@ -259,4 +274,4 @@
 
 .error {
   color: red;
-}
+} */

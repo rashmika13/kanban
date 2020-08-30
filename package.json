@@ -17,6 +17,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "imgbb-uploader": "^1.1.0",
     "payload-react": "^0.1.7",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",

@@ -23,7 +23,7 @@ export default function TopBar({ setOpen }) {
   const classes = useStyle();
   return (
     <div className={classes.root}>
-      <Typography className={classes.title}>Daily Trello</Typography>
+      <Typography className={classes.title}>KANBAN </Typography>
       <Button className={classes.btn} onClick={() => setOpen(true)}>
         Change Background
       </Button>
