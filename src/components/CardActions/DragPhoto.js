@@ -25,6 +25,7 @@ export default class MultipleImageUploadComponent extends Component {
   uploadFiles(e) {
     e.preventDefault();
     console.log(this.state.file);
+    this.setState = this.state.file;
   }
 
   render() {

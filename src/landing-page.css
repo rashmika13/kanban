@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #cae2ea;
+  background-size: 50%;
   display: flex;
   justify-content: flex-start;
 }
@@ -9,7 +10,7 @@
 .intro {
   height: 100%;
   width: 45%;
-  background-color: #07b4ee;
+  background-color: #40304a;
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
   display: flex;
