@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
+import CallMadeIcon from "@material-ui/icons/CallMade";
 
 // CSS Imports
 import "./App.css";
@@ -41,7 +43,9 @@ export default function Landing() {
         >
           Kanban
         </h1>
-
+        <Link to="/kanban">
+          Get Started <CallMadeIcon />
+        </Link>
         <h2
           style={{
             textAlign: "center",

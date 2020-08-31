@@ -8,15 +8,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import TopBar from "./TopBar";
 import SideMenu from "./SideMenu";
+import "./Board.css";
 // import DragPhoto from "../components/CardActions/DragPhoto";
 // import logo from "./images/checkmark.jpeg";
 
 const useStyle = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    backgroundColor: "#76bbd6",
-    backgroundSize: "cover",
-    backgroundImage: `url(${"./images/hawaii.jpeg"})`,
+    // background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    // backgroundImage: `url(${"../components/images/pic.jpeg"})`,
     width: "100%",
     overflowY: "auto",
   },
@@ -155,53 +155,54 @@ export default function App() {
   };
 
   return (
-    <StoreApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>
-      <div
-        className={classes.root}
-        style={{
-          backgroundImage: `url(${backgroundUrl})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <TopBar setOpen={setOpen} />
+    <div className="main-container">
+      <StoreApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>
+        <div
+          className={classes.root}
+          style={{
+            backgroundImage: `url(${backgroundUrl})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <TopBar setOpen={setOpen} />
 
-        <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="app" type="list" direction="horizontal">
-            {(provided) => (
-              <div
-                className={classes.listContainer}
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-              >
-                {data.listIds.map((listId, index) => {
-                  const list = data.lists[listId];
-                  return (
-                    <List
-                      list={list}
-                      // card={card}
-                      key={listId}
-                      index={index}
-                      deleteCard={deleteCard}
-                      // editCard={editCard}
-                      handleColumnDelete={handleColumnDelete}
-                    />
-                  );
-                })}
-                <InputContainer type="list" />
-                {provided.placeholder}
-                <img src="/public/checkmark.jpegcheckmark.jpeg" alt=""></img>
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+          <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId="app" type="list" direction="horizontal">
+              {(provided) => (
+                <div
+                  className={classes.listContainer}
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
+                  {data.listIds.map((listId, index) => {
+                    const list = data.lists[listId];
+                    return (
+                      <List
+                        list={list}
+                        // card={card}
+                        key={listId}
+                        index={index}
+                        deleteCard={deleteCard}
+                        // editCard={editCard}
+                        handleColumnDelete={handleColumnDelete}
+                      />
+                    );
+                  })}
+                  <InputContainer type="list" />
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
 
-        <SideMenu
-          setBackgroundUrl={setBackgroundUrl}
-          open={open}
-          setOpen={setOpen}
-        />
-      </div>
-    </StoreApi.Provider>
+          <SideMenu
+            setBackgroundUrl={setBackgroundUrl}
+            open={open}
+            setOpen={setOpen}
+          />
+        </div>
+      </StoreApi.Provider>
+    </div>
   );
 }
