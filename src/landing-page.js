@@ -1,35 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import CallMadeIcon from "@material-ui/icons/CallMade";
 
-import quotes from "./utils/quotes";
 // CSS Imports
 import "./App.css";
 import "./landing-page.css";
 import Carousel from "react-bootstrap/Carousel";
 
-const modalStyles = {
-  content: {
-    width: "30%",
-    height: "55%",
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-};
+// const modalStyles = {
+//   content: {
+//     width: "30%",
+//     height: "55%",
+//     top: "50%",
+//     left: "50%",
+//     right: "auto",
+//     bottom: "auto",
+//     marginRight: "-50%",
+//     transform: "translate(-50%, -50%)",
+//     display: "flex",
+//     flexDirection: "column",
+//     alignItems: "center",
+//   },
+// };
 
 Modal.setAppElement("#root");
 
 export default function Landing() {
-  // Modal State
-  const [setModalOpen] = useState(false);
+  // // Modal State
+  // const [setModalOpen] = useState(false);
   return (
     <div className="main-container">
       <div className="intro">
