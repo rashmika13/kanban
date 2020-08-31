@@ -26,7 +26,11 @@ export default function List({ list, index, handleColumnDelete, deleteCard }) {
         <div {...provided.draggableProps} ref={provided.innerRef}>
           <Paper className={classes.root} {...provided.dragHandleProps}>
             <CssBaseline />
-            <Title title={list.title} listId={list.id} handleColumnDelete={handleColumnDelete} />
+            <Title
+              title={list.title}
+              listId={list.id}
+              handleColumnDelete={handleColumnDelete}
+            />
 
             <Droppable droppableId={list.id}>
               {(provided) => (
@@ -36,7 +40,13 @@ export default function List({ list, index, handleColumnDelete, deleteCard }) {
                   className={classes.cardContainer}
                 >
                   {list.cards.map((card, index) => (
-                    <Card key={card.id} card={card} index={index} deleteCard={deleteCard} listId={list.id} />
+                    <Card
+                      key={card.id}
+                      card={card}
+                      index={index}
+                      deleteCard={deleteCard}
+                      listId={list.id}
+                    />
                   ))}
                   {provided.placeholder}
                 </div>

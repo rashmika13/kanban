@@ -1,0 +1,8 @@
+@media screen and (max-width: 600px) {
+  .instructionPic {
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    width: 100%;
+  }
+}

@@ -9,14 +9,10 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import TopBar from "./TopBar";
 import SideMenu from "./SideMenu";
 import "./Board.css";
-// import DragPhoto from "../components/CardActions/DragPhoto";
-// import logo from "./images/checkmark.jpeg";
 
 const useStyle = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    // background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    // backgroundImage: `url(${"../components/images/pic.jpeg"})`,
     width: "100%",
     overflowY: "auto",
   },
@@ -58,16 +54,6 @@ export default function App() {
     newData.lists[listId].cards.splice(idx, 1);
     setData(newData);
   };
-
-  // const handleOnChange = (e) => {
-  //   setNewTitle(e.target.value);
-  // };
-  // const editCard = (event, idx, card, cardId) => {
-  //   const newData = { ...data };
-  //   console.log(newData);
-  //   newData.cards[cardId].title.splice(idx, 1);
-  //   setData(newData);
-  // };
 
   const handleColumnDelete = (e) => {
     const newData = { ...data };
@@ -153,8 +139,6 @@ export default function App() {
       setData(newState);
     }
   };
-
-  
 
   return (
     <div className="main-container">
