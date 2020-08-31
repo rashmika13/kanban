@@ -3,9 +3,11 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import CallMadeIcon from "@material-ui/icons/CallMade";
 
+import quotes from "./utils/quotes"
 // CSS Imports
 import "./App.css";
 import "./landing-page.css";
+import Carousel from 'react-bootstrap/Carousel';
 
 const modalStyles = {
   content: {
@@ -28,7 +30,6 @@ Modal.setAppElement("#root");
 export default function Landing() {
   // Modal State
   const [setModalOpen] = useState(false);
-
   return (
     <div className="main-container">
       <div className="intro">
@@ -72,7 +73,45 @@ export default function Landing() {
         >
           Task tracking for your everyday needs
         </h3>
+    </div>
+    <div className="instruction">
+      <div id="instructionTitle">See how it Works
       </div>
+      <div>
+    <Carousel>
+  <Carousel.Item>
+    <img className="instructionPic"
+      src='./firstPic.png'
+      alt="First slide"
+    />
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="instructionPic"
+      src='./secondPic.png'
+      alt="Second slide"
+    />
+
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="instructionPic"
+      src='./thirdPic.png'
+      alt="Third slide"
+    />
+
+    
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="instructionPic"
+      src='./fourthPic.png'
+      alt="Fourth slide"
+    />
+  </Carousel.Item>
+</Carousel>
+    </div>
+    </div>
     </div>
   );
 }

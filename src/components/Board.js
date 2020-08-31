@@ -154,6 +154,8 @@ export default function App() {
     }
   };
 
+  
+
   return (
     <div className="main-container">
       <StoreApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>

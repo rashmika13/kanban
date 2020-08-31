@@ -28,11 +28,12 @@ export default function InputCard({ setOpen, listId, type }) {
   const classes = useStyle();
   const { addMoreCard, addMoreList } = useContext(storeApi);
   const [title, setTitle] = useState("");
-  
+  const [isInEditMode,setIsInEditMode]=useState(false)
 
   const handleOnChange = (e) => {
     setTitle(e.target.value);
   };
+
   const handleBtnConfirm = () => {
     if (type === "card") {
       addMoreCard(title, listId);
@@ -53,7 +54,9 @@ export default function InputCard({ setOpen, listId, type }) {
   //   updateCardTitle(title, listId);
   //   setOpen(false);
   // };
-
+  const changeEditMode = () => {
+    console.log('isInEditMode')
+  }
   
 
   return (
