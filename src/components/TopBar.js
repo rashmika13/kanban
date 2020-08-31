@@ -1,7 +1,8 @@
 import React from "react";
 import { Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+import quotes from '../utils/quotes'
+import { grey } from "@material-ui/core/colors";
 const useStyle = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -12,18 +13,24 @@ const useStyle = makeStyles((theme) => ({
     fontSize: "1.2rem",
     fontWeight: "bold",
     flexGrow: 1,
+    color:'white'
   },
   btn: {
     color: "#fff",
     background: "hsla(0,0%,100%,.24)",
   },
+  quoteContent: {
+    color: 'white'
+  }
+
 }));
 
 export default function TopBar({ setOpen }) {
+  const quotesIdx = Math.floor(Math.random() * quotes.length)
   const classes = useStyle();
   return (
     <div className={classes.root}>
-      <Typography className={classes.title}>KANBAN </Typography>
+      <Typography className={classes.title}>KANBAN <div className={classes.quoteContent}>{quotes[quotesIdx]}</div></Typography>
       <Button className={classes.btn} onClick={() => setOpen(true)}>
         Change Background
       </Button>

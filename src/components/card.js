@@ -12,6 +12,9 @@ const useStyle = makeStyles((theme) => ({
     padding: theme.spacing(1, 1, 1, 2),
     margin: theme.spacing(1),
   },
+  photo: {
+    display:theme.block
+  }
 }));
 
 export default function Card({ card, index, deleteCard, editCard, listId }) {
@@ -51,10 +54,10 @@ export default function Card({ card, index, deleteCard, editCard, listId }) {
 
   //     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   //   }
-  const [showButton, setShowButton] = useState(false);
-  const showEdit = (show) => {
-    if (show) {
-      setShowButton(true);
+  const [showButton,setShowButton] = useState(false)
+  const showEdit= (show) => {
+    if(show){
+      setShowButton(true)
     } else {
       setShowButton(false);
     }

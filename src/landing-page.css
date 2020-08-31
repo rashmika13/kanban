@@ -9,7 +9,7 @@
 
 .intro {
   height: 100%;
-  width: 45%;
+  width: 30vw;
   background-color: #40304a;
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
@@ -55,4 +55,23 @@
 
 .button:hover {
   background-color: rgb(230, 230, 230);
+}
+
+.instruction {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructionPic {
+  width:790px;
+  height:400px;
+}
+
+#instructionTitle {
+  font-size:3vw;
+  color:white;
+  margin:40px;
 }
