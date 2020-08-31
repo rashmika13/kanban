@@ -42,7 +42,7 @@ export default function Landing() {
             fontSize: "2.5rem",
           }}
         >
-          Kanban
+          Kanban 2.0
         </h1>
         <Link to="/kanban">
           Get Started <CallMadeIcon />
