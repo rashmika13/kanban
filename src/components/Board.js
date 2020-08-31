@@ -8,12 +8,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import TopBar from "./TopBar";
 import SideMenu from "./SideMenu";
-import DragPhoto from "../components/CardActions/DragPhoto";
+// import DragPhoto from "../components/CardActions/DragPhoto";
+// import logo from "./images/checkmark.jpeg";
 
 const useStyle = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    background: "#cae2ea",
+    backgroundColor: "#76bbd6",
+    backgroundSize: "cover",
+    backgroundImage: `url(${"./images/hawaii.jpeg"})`,
     width: "100%",
     overflowY: "auto",
   },
@@ -51,16 +54,27 @@ export default function App() {
   };
 
   const deleteCard = (event, idx, card, listId) => {
-    const newData = { ...data }
-    newData.lists[listId].cards.splice(idx, 1)
-    setData(newData)
-  }
+    const newData = { ...data };
+    newData.lists[listId].cards.splice(idx, 1);
+    setData(newData);
+  };
+
+  // const handleOnChange = (e) => {
+  //   setNewTitle(e.target.value);
+  // };
+  // const editCard = (event, idx, card, cardId) => {
+  //   const newData = { ...data };
+  //   console.log(newData);
+  //   newData.cards[cardId].title.splice(idx, 1);
+  //   setData(newData);
+  // };
+
   const handleColumnDelete = (e) => {
-    const newData = { ...data }
-    let idx = newData.listIds.indexOf(e.target.value)
-    newData.listIds.splice(idx, 1)
-    setData(newData)
-  }
+    const newData = { ...data };
+    let idx = newData.listIds.indexOf(e.target.value);
+    newData.listIds.splice(idx, 1);
+    setData(newData);
+  };
 
   const addMoreList = (title) => {
     const newListId = uuid();
@@ -162,10 +176,21 @@ export default function App() {
               >
                 {data.listIds.map((listId, index) => {
                   const list = data.lists[listId];
-                  return <List list={list} key={listId} index={index} deleteCard={deleteCard} handleColumnDelete={handleColumnDelete} />;
+                  return (
+                    <List
+                      list={list}
+                      // card={card}
+                      key={listId}
+                      index={index}
+                      deleteCard={deleteCard}
+                      // editCard={editCard}
+                      handleColumnDelete={handleColumnDelete}
+                    />
+                  );
                 })}
                 <InputContainer type="list" />
                 {provided.placeholder}
+                <img src="/public/checkmark.jpegcheckmark.jpeg" alt=""></img>
               </div>
             )}
           </Droppable>

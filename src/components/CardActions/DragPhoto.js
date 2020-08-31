@@ -35,7 +35,6 @@ export default class MultipleImageUploadComponent extends Component {
             <img src={url} alt="..." />
           ))}
         </div>
-
         <div className="form-group">
           <input
             type="file"

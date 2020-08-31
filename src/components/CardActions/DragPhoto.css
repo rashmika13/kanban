@@ -1,17 +1,16 @@
 .form-control {
-  padding: .375rem 0;
+  padding: 0.375rem 0;
   border: none;
 }
 
 .preview img {
-  max-width: 100px;
+  max-width: 200px;
 }
 
 .multi-preview img {
-  max-width: 100px;
+  max-width: 200px;
   padding: 5px;
 }
-
 
 /* .file-input {
   display: none;
