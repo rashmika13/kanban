@@ -66,12 +66,22 @@
 }
 
 .instructionPic {
-  width:790px;
-  height:400px;
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
 }
 
 #instructionTitle {
-  font-size:3vw;
-  color:white;
-  margin:40px;
+  font-size: 3vw;
+  color: white;
+  margin: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .instructionPic {
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    width: 100%;
+  }
 }

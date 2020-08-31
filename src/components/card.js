@@ -5,7 +5,7 @@ import { Draggable } from "react-beautiful-dnd";
 import DragPhoto from "./CardActions/DragPhoto";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import AttachmentIcon from "@material-ui/icons/Attachment";
+import "./card.css";
 
 const useStyle = makeStyles((theme) => ({
   card: {
@@ -13,8 +13,8 @@ const useStyle = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   photo: {
-    display:theme.block
-  }
+    display: theme.block,
+  },
 }));
 
 export default function Card({ card, index, deleteCard, editCard, listId }) {
@@ -54,19 +54,14 @@ export default function Card({ card, index, deleteCard, editCard, listId }) {
 
   //     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   //   }
-  const [showButton,setShowButton] = useState(false)
-  const showEdit= (show) => {
-    if(show){
-      setShowButton(true)
+  const [showButton, setShowButton] = useState(false);
+  const showEdit = (show) => {
+    if (show) {
+      setShowButton(true);
     } else {
       setShowButton(false);
     }
   };
-
-  // const deleteCard = (event) => {
-  //  const cardsList = card
-  //   console.log(cardsList)
-  // }
 
   return (
     <div>
