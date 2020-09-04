@@ -41,7 +41,7 @@ export default function Landing() {
             fontSize: "2.5rem",
           }}
         >
-          Kanban 2.0
+          i- Kan
         </h1>
         <Link to="/kanban">
           Get Started <CallMadeIcon />
@@ -83,7 +83,7 @@ export default function Landing() {
             <Carousel.Item>
               <img
                 className="instructionPic"
-                src="./kb1.png"
+                src="./c4.png"
                 alt="First slide"
               />
             </Carousel.Item>
