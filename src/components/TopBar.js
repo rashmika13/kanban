@@ -29,8 +29,7 @@ export default function TopBar({ setOpen }) {
   return (
     <div className={classes.root}>
       <Typography className={classes.title}>
-        KANBAN 2.0{" "}
-        <div className={classes.quoteContent}>{quotes[quotesIdx]}</div>
+        i-Kan <div className={classes.quoteContent}>{quotes[quotesIdx]}</div>
       </Typography>
       <Button className={classes.btn} onClick={() => setOpen(true)}>
         Change Background
