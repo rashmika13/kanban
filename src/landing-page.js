@@ -41,7 +41,7 @@ export default function Landing() {
             fontSize: "2.5rem",
           }}
         >
-          i- Kan
+          i-Kan
         </h1>
         <Link to="/kanban">
           Get Started <CallMadeIcon />
